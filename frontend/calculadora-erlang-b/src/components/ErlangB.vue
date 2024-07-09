@@ -49,6 +49,7 @@
                 variant="outlined"
                 v-model="probabilidadeBloqueio"
                 readonly
+                :loading="loadingUsuarios"
               ></v-text-field>
             </div>
           </v-tabs-window-item>
@@ -95,6 +96,7 @@
                 variant="outlined"
                 v-model="quantidadeUsuarios"
                 readonly
+                :loading="loading"
               ></v-text-field>
             </div>
           </v-tabs-window-item>
@@ -110,6 +112,8 @@ import axios from "axios";
 export default {
   data() {
     return {
+      loading: false,
+      loadingUsuarios: false,
       bloqueio: {
         N: null,
         trafegoErlangs: null,
@@ -159,12 +163,14 @@ export default {
         return;
       }
       try {
+        this.loadingUsuarios = true;
         const response = await axios.post(
           "https://calculadora-erlang-b-1.onrender.com/erlang-b/calcular-probabilidade-de-bloqueio",
           this.bloqueio
         );
         this.probabilidadeBloqueio = response.data;
         this.error = null;
+        this.loadingUsuarios = false;
       } catch (error) {
         this.error = "Erro ao calcular a probabilidade de bloqueio.";
         this.probabilidadeBloqueio = null;
@@ -216,12 +222,14 @@ export default {
         return;
       }
       try {
+        this.loading = true;
         const response = await axios.post(
           "https://calculadora-erlang-b-1.onrender.com/erlang-b/calcular-quantidade-de-usuarios",
           this.usuarios
         );
         this.quantidadeUsuarios = response.data;
         this.error = null;
+        this.loading = false;
       } catch (error) {
         this.error = "Erro ao calcular a quantidade de usuários.";
         this.quantidadeUsuarios = null;

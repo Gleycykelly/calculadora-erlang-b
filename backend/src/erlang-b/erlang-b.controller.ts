@@ -8,7 +8,6 @@ export class ErlangBController {
 
   @Post('calcular-probabilidade-de-bloqueio')
   probabilidadeDeBloqueio(@Body() erlangBDto: ErlangBDto) {
-    console.log(erlangBDto);
     return this.erlangBService.probabilidadeDeBloqueio(
       erlangBDto.trafegoErlangs,
       erlangBDto.N,

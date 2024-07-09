@@ -17,7 +17,7 @@ export class ErlangBService {
     let probabilidadeBloqueio = 0;
     do {
       probabilidadeBloqueio = this.probabilidadeDeBloqueio(A, erlangBDto.N);
-      console.log(probabilidadeBloqueio);
+
       A += passoInicial;
     } while (Math.abs(probabilidadeBloqueio - erlangBDto.Pb) > passoInicial);
 

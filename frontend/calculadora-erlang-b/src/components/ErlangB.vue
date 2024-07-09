@@ -217,7 +217,7 @@ export default {
       }
       try {
         const response = await axios.post(
-          "https://calculadora-erlang-b-1.onrender.com/calcular-quantidade-de-usuarios",
+          "https://calculadora-erlang-b-1.onrender.com/erlang-b/calcular-quantidade-de-usuarios",
           this.usuarios
         );
         this.quantidadeUsuarios = response.data;

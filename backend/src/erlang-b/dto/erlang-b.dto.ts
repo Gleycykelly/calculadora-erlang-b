@@ -2,11 +2,11 @@ import { IsOptional } from 'class-validator';
 
 export class ErlangBDto {
   @IsOptional()
-  probabilidadeDeBloqueio: number;
+  A: number;
 
   @IsOptional()
-  numeroDeCanais: number;
+  N: number;
 
   @IsOptional()
-  intensidadeDeTrafego: number;
+  Pb: number;
 }

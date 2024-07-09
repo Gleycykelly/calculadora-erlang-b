@@ -160,7 +160,7 @@ export default {
       }
       try {
         const response = await axios.post(
-          "http://localhost:3000/erlang-b/calcular-probabilidade-de-bloqueio",
+          "https://calculadora-erlang-b-1.onrender.com/erlang-b/calcular-probabilidade-de-bloqueio",
           this.bloqueio
         );
         this.probabilidadeBloqueio = response.data;
@@ -217,7 +217,7 @@ export default {
       }
       try {
         const response = await axios.post(
-          "http://localhost:3000/erlang-b/calcular-quantidade-de-usuarios",
+          "https://calculadora-erlang-b-1.onrender.com/calcular-quantidade-de-usuarios",
           this.usuarios
         );
         this.quantidadeUsuarios = response.data;

@@ -1,23 +1,22 @@
 <template>
-  <v-app>
+  <v-app style="background-color: #651fff">
+    <v-toolbar title="Calculadora Erlang B" color="#651FFF"></v-toolbar>
     <v-main>
-      <HelloWorld/>
+      <ErlangB />
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import ErlangB from "./components/ErlangB.vue";
 export default {
-  name: 'App',
-
   components: {
-    HelloWorld,
+    ErlangB,
   },
+  name: "App",
 
   data: () => ({
     //
   }),
-}
+};
 </script>

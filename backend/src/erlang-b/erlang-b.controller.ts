@@ -8,14 +8,13 @@ export class ErlangBController {
 
   @Post('calcular-probabilidade-de-bloqueio')
   probabilidadeDeBloqueio(@Body() erlangBDto: ErlangBDto) {
-    return this.erlangBService.probabilidadeDeBloqueio(
-      erlangBDto.trafegoErlangs,
-      erlangBDto.N,
-    );
+    return this.erlangBService
+      .probabilidadeDeBloqueio(erlangBDto.trafegoErlangs, erlangBDto.N)
+      .toFixed(2);
   }
 
   @Post('calcular-quantidade-de-usuarios')
   quantidadedeUsuarios(@Body() erlangBDto: ErlangBDto) {
-    return this.erlangBService.quantidadedeUsuarios(erlangBDto);
+    return Math.round(this.erlangBService.quantidadedeUsuarios(erlangBDto));
   }
 }
